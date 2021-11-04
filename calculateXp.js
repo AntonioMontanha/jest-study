@@ -1,4 +1,9 @@
+const validateMonster = require('./validateMonster')
 function calculateXp(monster, numberOfPlayers){
+    if (validateMonster(monster) == false){
+        throw new Error('This is a invalid monster!')
+    }
+
     let partialXp;
     switch (monster){
         case 'Dragon' : 
